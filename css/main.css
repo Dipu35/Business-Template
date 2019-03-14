@@ -1,0 +1,688 @@
+/*! HTML5 Boilerplate v7.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+ 
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+   html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+
+
+ /* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+.clear{
+  overflow: hidden;
+}
+
+
+
+
+* {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style: none;
+}
+
+body {
+      width: 100%;
+      height: 100vh;
+      background: url(Hero.jpg) no-repeat 50% 50%;
+      background-size: cover;
+      display: table;
+}
+
+.content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+
+.content h1 {
+      color: #fff;
+      font-family: "Poppins";
+      font-weight: 200;
+      font-size: 40px;
+}
+
+nav {
+      width: 100%;
+      background: #000;
+      height: 70px;
+      position: static;
+      z-index: 1;
+}
+
+nav #brand {
+      float: left;
+      display: block;
+      margin-left: 84px;
+      font-size: 30px;
+      line-height: 70px;
+      font-weight: bold;
+}
+
+nav #brand a {
+      color: #fff;
+      transition: all 0.3s ease-out;
+      font-family: "Poppins";
+      font-weight: 300;
+}
+
+nav #menu {
+      float: left;
+      left: 50%;
+      position: relative;
+}
+
+nav #menu li {
+      display: inline-block;
+      padding: 0px 30px;
+      cursor: pointer;
+      line-height: 70px;
+      position: relative;
+      transition: all 0.3s ease-out;
+}
+
+nav #menu li a {
+      color: #fff;
+      font-family: "Poppins";
+      font-weight: 200;
+}
+
+#toggle {
+      position: absolute;
+      right: 20px;
+      top: 14px;
+      z-index: 999;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      float: right;
+      transition: all 0.3s ease-out;
+      visibility: hidden;
+      opacity: 0;
+}
+
+#toggle .span {
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease-out;
+      backface-visibility: hidden;
+      margin: 5px auto;
+}
+
+#toggle.on #one {
+      transform: rotate(45deg) translateX(2px) translateY(4px);
+}
+
+#toggle.on #two {
+      opacity: 0;
+}
+
+#toggle.on #three {
+      transform: rotate(-45deg) translateX(8px) translateY(-10px);
+}
+
+#resize {
+      z-index: 1;
+      top: 0px;
+      position: absolute;
+      background: #000;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 1s ease-out;
+      display: table;
+}
+
+#resize #menu {
+      height: 90px;
+      display: table-cell;
+      vertical-align: center;
+}
+
+#resize #menu li {
+      display: block;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 50px;
+      min-height: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) {
+      margin-top:140px;
+}
+
+#resize #menu li a {
+      color: #fff;
+}
+
+#resize.active {
+      visibility: visible;
+      opacity: 0.99;
+}
+
+
+@media(max-width: 768px) {
+      #toggle {
+            visibility: visible;
+            opacity: 1;
+            margin-top: 6px;
+      }
+
+      nav #brand {
+            margin-left: 18px;
+      }
+
+      #menu a {
+            font-family: "Poppins";
+            font-weight: 200;
+            font-size: 20px;
+      }
+
+      nav #menu {
+            display: none;
+      }
+}
+
+@media(min-width: 768px) {
+      #resize {
+            visibility: hidden !important;
+      }
+}
+
+
+/* header */
+
+
+.slogan{
+      box-shadow: 4px 5px 7px 9px;
+  background-image: url(https://www.quackit.com/html/templates/download/bootstrap/business-2/images/header.jpg);
+  background-size: cover;
+  height:650px;
+  width:100%;
+}
+
+
+.slogan h1{
+font-size:50px;
+      color:white;
+      text-align: center;
+      margin-top:200px;
+      font-weight: bold;
+      font-family: 'Lilita One', cursive;
+}
+
+
+.slogan p{
+color:white;
+      text-align: center;
+      font-size:18px;
+      margin-top:30px;
+      font-family: 'Muli', sans-serif;
+}
+
+
+.icon{
+  text-align: center;
+      font-size:35px;
+      color:white;
+      margin-top:90px;
+
+}
+
+.slogan1{
+      box-shadow: 4px 5px 7px 9px;
+      background:#9ACD32;
+      height:300px;
+}
+
+.slogan1 h2{
+  text-align: center;
+      color:white;
+      font-size:30px;
+      margin-top:-10px;
+      font-family: 'Muli', sans-serif;
+}
+
+
+.slogan1 p{
+  text-align: center;
+      color:white;
+      margin-top:10px;
+      font-size:20px;
+      font-family: 'Muli', sans-serif;
+}
+
+.nd{
+display:inline-table;
+      margin-left:40px;
+}
+
+.ndleft{
+float:left;
+}
+
+.ndleft img{
+      border-radius: 80px;
+      height:250px;
+      margin-top:40px;
+}
+
+
+.ndright{
+float:right;
+
+}
+
+.ndright h1{
+font-size:35px;
+      font-family: 'Muli', sans-serif;
+}
+
+.ndright p{
+  font-size:22px;
+      font-family: 'Muli', sans-serif;
+}
+
+
+
+
+
+.mid{
+background: #222222;
+      margin-top: 40px;
+      box-shadow: 4px 5px 7px 9px;
+}
+
+.left{
+float:left;
+      width:50%;
+}
+
+.left h1{
+      color:white;
+      font-size: 40px;
+      font-family: 'Muli', sans-serif;
+      
+}
+
+.left p{
+      color:white;
+      font-size: 22px;
+      font-family: 'Muli', sans-serif;
+}
+
+.right{
+float:right;
+}
+
+.right img{
+      height:300px;
+      width:400px;
+      border-radius: 60px;
+      margin-top:50px;
+      
+}
+
+
+
+.content1{
+      margin-bottom: 20px;
+      height:300px;
+      margin-top:50px;
+      box-shadow: 0px 0px 8px 4px;
+}
+
+.content1 h1{
+      text-align: center;
+      font-size:35px;
+      font-family: 'Muli', sans-serif;
+}
+
+
+.content1 p{
+      text-align: center;
+      font-size:18px;
+      font-family: 'Muli', sans-serif;
+}
+
+
+
+.contact{
+background:#9ACD32;
+      text-align: center;
+      height:400px;
+      box-shadow: 0px 0px 2px 4px;
+      
+}
+
+.contact p{
+font-size:30px;
+      color:white;
+      margin-top:100px;
+      font-family: 'Muli', sans-serif;
+}
+
+.contact p1{
+color:white;
+      font-size:22px;
+      font-family: 'Muli', sans-serif;
+}
+
+
+.contact p2{
+  color:white;
+      font-size:22px;
+      font-family: 'Muli', sans-serif;
+}
+
+
+.footer{
+      text-align: center;
+      height:100px;
+      margin-top:25px;
+      
+}
+
+.footer h1{
+      color:black;
+      font-family: 'Muli', sans-serif;
+      
+}
+
+
+
+
+
+
+ /* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.btn1{
+ margin-left:550px;
+      margin-top:40px;
+      background-color: #9ACD32;
+      height:45px;
+      width:200px;
+      color:white;
+       border-radius: 25px;
+     
+}
+
+.btn1:hover{
+      background:#32CC32;
+}
+
+
+ .hidden {
+  display: none !important;
+      
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+/*
+* Extends the .visuallyhidden class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+
+
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+ 
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+   @media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+ 
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+   @media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster */
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+
